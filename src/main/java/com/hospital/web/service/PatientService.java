@@ -5,15 +5,18 @@ import org.springframework.stereotype.Component;
 import com.hospital.web.domain.PatientDTO;
 @Component
 public interface PatientService {
-	// DAO °ªÀ» Åä½ºÇØ ÁÖ´Â ·ÎÁ÷
+	//DAO ê°’ì„ í† ìŠ¤í•´ì£¼ëŠ” ë¡œì§
 		public int join(PatientDTO member) throws Exception;
 		public PatientDTO findById(String id) throws Exception;
 		public PatientDTO login(PatientDTO member) throws Exception;
 		public boolean logout() throws Exception;
 		public int change(PatientDTO member) throws Exception;
 		public int remove(PatientDTO member) throws Exception;
-		// Ãß°¡µÇ´Â ·ÎÁ÷
+		//ì¶”ê°€ëœ ë¡œì§
 		public String getBirth(String patJumin);
 		public String getAge(String patJumin);
 		public PatientDTO getSession();
+		public int count()throws Exception;
+		
+		
 }

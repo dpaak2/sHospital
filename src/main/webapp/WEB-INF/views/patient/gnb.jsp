@@ -18,23 +18,23 @@
 			$('#patGnb').addClass('gnb').addClass('width_full_size ').addClass('bg_color_darkgray').addClass('text_center').css('height: 40px');
 			$('#patGnb li:nth-child(1)').click(function(){
 				alert('jQueryTest');
-				location.href="${context}/home.do?action=logout&page=mainCommon"
+				location.href="${context.path}/home"
 			});
 			patGnb.find('li:nth-child(2)').click(function() {
 				alert('jQuery Test');
-				goPage('${context}/patient.do','move','detail');
+				goPage('${context.path}/patient');
 				});
-		patGnb.find(' li:nth-child(3)').click(function() {
+		patGnb.find('li:nth-child(3)').click(function() {
 				alert('jquery test');
-			goPage('${context}/patient.do','move','treatment_list');
+			goPage('${context.path}/patient');
 			});
 		patGnb.find('li:nth-child(4)').click(function() {
 				alert('jquery test');
-				goPage('${context}/board.do','move','articleList');
+				goPage('${context.path}/board');
 			});
 		patGnb.find('li:nth-child(5)').click(function() {
 				alert('jquery test');
-				goPage('${context}/home.do','move','mainCommon');
+				goPage('${context.path}/home');
 			});
 		});
 		</script>

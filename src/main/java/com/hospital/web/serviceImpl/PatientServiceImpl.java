@@ -1,71 +1,97 @@
 package com.hospital.web.serviceImpl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
+import com.hospital.web.PatientController;
 import com.hospital.web.dao.PatientDAO;
 import com.hospital.web.domain.PatientDTO;
+import com.hospital.web.mapper.PatientMapper;
 import com.hospital.web.service.PatientService;
 
 @Service
-public class PatientServiceImpl implements PatientService{
-	@Autowired PatientService service;
-	@Autowired PatientServiceImpl instance;
-	@Autowired PatientDAO dao;
-	@Autowired PatientDTO session;
+public class PatientServiceImpl implements PatientService {
+	private static final Logger logger = LoggerFactory.getLogger(PatientServiceImpl.class);
+	@Autowired
+	PatientService service;
+	@Autowired
+	PatientDTO patient; /* spring root contextÏóê Í∞íÏù¥ ÏûàÎã§ */
+	@Autowired	PatientMapper mapper;
+
 	@Override
 	public int join(PatientDTO patient) throws Exception {
-		return dao.insert(patient);
-		
+		logger.info("PatientServiceImpl -join() {}", "join");
+		return 0;
 	}
 
 	@Override
 	public PatientDTO findById(String id) throws Exception {
-		return dao.selectById(id);
+		logger.info("PatientServiceImpl -findById() {}", "findById");
+		return null;
 	}
 
 	@Override
-	public PatientDTO login(PatientDTO patient) throws Exception {
-	
-		session =null ;/*this.findById(patient.patID())*/
-		return session;
+	public PatientDTO login(PatientDTO member) throws Exception {
+		logger.info("PatientServiceImpl -login() {}", "login");
+
+		return mapper.selectById(member.getPatID());
 	}
+
 	@Override
 	public boolean logout() throws Exception {
-		
+		logger.info("PatientServiceImpl -logout() {}", "logout");
+
 		return true;
-	}
-	@Override
-	public int change(PatientDTO patient) throws Exception{
-		return dao.update(patient);
 	}
 
 	@Override
-	public int remove(PatientDTO patient) throws Exception{
-		return dao.delete(patient);
+	public int change(PatientDTO patient) throws Exception {
+		logger.info("PatientServiceImpl -goJoin() {}", "ENTER");
+		return 0;
+	}
+
+	@Override
+	public int remove(PatientDTO patient) throws Exception {
+		logger.info("PatientServiceImpl -goJoin() {}", "ENTER");
+		return 0;
 	}
 
 	@Override
 	public String getBirth(String patJumin) {
-		String temp=null;
-		/*int year = Integer.parseInt(session.getPatJumin().substring(0,2));
-		int month = Integer.parseInt(session.getPatJumin().substring(2,4));
-		int day = Integer.parseInt(session.getPatJumin().substring(4,6));
-		String temp = String.format("19%d≥‚ %dø˘ %d¿œ", year,month,day);*/
+		logger.info("PatientServiceImpl -goJoin() {}", "ENTER");
+		String temp = null;
+		/*
+		 * int year = Integer.parseInt(session.getPatJumin().substring(0,2));
+		 * int month = Integer.parseInt(session.getPatJumin().substring(2,4));
+		 * int day = Integer.parseInt(session.getPatJumin().substring(4,6));
+		 * String temp = String.format("19%dÔøΩÔøΩ %dÔøΩÔøΩ %dÔøΩÔøΩ", year,month,day);
+		 */
 		return temp;
 	}
+
 	@Override
 	public String getAge(String patJumin) {
+		logger.info("PatientServiceImpl -goJoin() {}", "ENTER");
 		return null;
-				/* String.valueOf(117-Integer.parseInt(session.getPatJumin().substring(0,2))+1)+"ºº";*/
+		/*
+		 * String.valueOf(117-Integer.parseInt(session.getPatJumin().substring(0
+		 * ,2))+1)+"ÔøΩÔøΩ";
+		 */
 	}
 
 	@Override
 	public PatientDTO getSession() {
-		// TODO Auto-generated method stub
+		logger.info("PatientServiceImpl -goJoin() {}", "ENTER");
 		return null;
 	}
 
-	
+	@Override
+	public int count() throws Exception {
+		logger.info("PatientServiceImpl -count() {}", "ENTER");
+		return mapper.count();
+	}
+
 }

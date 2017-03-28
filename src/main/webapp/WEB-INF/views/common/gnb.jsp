@@ -29,7 +29,7 @@
 	    	alert('의사 login');
 			goPage('${context.path}/doctor/login');
 		}); 
-		commonGnb.find('li:nth-child(4)').click(function() {
+		commonGnb.find('li:nth-child(4)').click(function() { 
 	    	alert('staff login');
 			goPage('${context.path}/admin/login');
 		}); 

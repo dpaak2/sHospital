@@ -56,5 +56,6 @@
 function docDetail(){
 	alert('의사id클릭');
 	location.href="${context.path}/patient/doctor/han";
+	
 }
 </script>
