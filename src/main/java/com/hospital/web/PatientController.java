@@ -27,17 +27,17 @@ public class PatientController {
 	PatientMapper mapper;
 
 	@RequestMapping("/join") /* mvc가 차끌고 다니면서 wiring 하고 있다. */
-	public String goJoin() {
-		logger.info("PatientController -goJoin() {}",
+	public String join() {
+		logger.info("PatientController -join() {}",
 				"ENTER"); /* 매 method마다 가져다 부친다 */
 		return "public:patient/registerForm";
 	}
 
 	@RequestMapping("/login")
-	public String goLogin() {
-		logger.info("PatientController -goLogin() {}",
+	public String login() {
+		logger.info("PatientController -login() {}",
 				"ENTER"); /* goLogin이라는 method안으로 진입하였다 */
-		logger.info("PatientController -goLogin() {}", "ENTER");
+		logger.info("PatientController -login() {}", "ENTER");
 		return "public:common/loginForm";
 	}
 
