@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.hospital.web.composite.Complex;
-import com.hospital.web.domain.ContextDTO;
+import com.hospital.web.domain.Context;
 
 /**
  * Handles requests for the application home page.
@@ -29,7 +29,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String index(HttpSession session) {
 		
-		logger.info("Welcome{}!!","home"); /*method·Î ÁØ´Ù? */
+		logger.info("Welcome{}!!","home"); /*methodï¿½ï¿½ ï¿½Ø´ï¿½? */
 
  		session.setAttribute("context",Complex.ContextFactory.cerate());
 		return "index";

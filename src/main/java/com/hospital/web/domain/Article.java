@@ -8,10 +8,10 @@ import lombok.Setter;
 
 @Component
 @Data
-public class ArticleDTO {
+public class Article {
 	@Getter
 	@Setter
-	private String seq/* ±ÛÀÌ±â ¶§¹®¿¡ */, id, title, content, regdate, readCount;
+	private String seq/* ï¿½ï¿½ï¿½Ì±ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */, id, title, content, regdate, readCount;
 
 	public String getSeq() {
 		return seq;

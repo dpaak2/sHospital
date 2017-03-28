@@ -7,19 +7,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.hospital.web.dao.BoardDAO;
-import com.hospital.web.domain.ArticleDTO;
+import com.hospital.web.domain.Article;
 @Repository
 public class BoardDAOImpl implements BoardDAO{
 	@Autowired BoardDAO dao;
 	@Override
-	public int insert(ArticleDTO param) throws Exception {
+	public int insert(Article param) throws Exception {
 		String sql = "";
 		return 0;
 	}
 
 	@Override
-	public ArticleDTO selectBySeq(ArticleDTO param) throws Exception {
-		ArticleDTO article = null;  // null checkingÀ» ÇÏ±â À§ÇØ¼­ 
+	public Article selectBySeq(Article param) throws Exception {
+		Article article = null;  // null checkingï¿½ï¿½ ï¿½Ï±ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ 
 		
 		String sql = String.format("SELECT art_seq, pat_id, title, content, regdate, read_count FROM Article WHERE art_seq='%s'", param.getSeq());
 	
@@ -28,21 +28,21 @@ public class BoardDAOImpl implements BoardDAO{
 	}
 
 	@Override
-	public List<ArticleDTO> selectByWord(String[] param) throws Exception {
-		List<ArticleDTO> listSome = new ArrayList<ArticleDTO>();
-		ArticleDTO article = null;				
+	public List<Article> selectByWord(String[] param) throws Exception {
+		List<Article> listSome = new ArrayList<Article>();
+		Article article = null;				
 		String sql = "SELECT art_seq, id, title, contents, regdate, read_count FROM Article "
 				   + " WHERE "+param[0]+" LIKE '%"+param[1]+"%'";
-		System.out.println("DAO¿¡¼­ ½ÇÇàµÈ Äõ¸®:"+sql);
+		System.out.println("DAOï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½:"+sql);
 		
 	
 		return listSome;
 	}
 
 	@Override
-	public List<ArticleDTO> selectAll(int[] pageArr) {
-		List<ArticleDTO> listAll = new ArrayList<ArticleDTO>();
-		ArticleDTO article = null;
+	public List<Article> selectAll(int[] pageArr) {
+		List<Article> listAll = new ArrayList<Article>();
+		Article article = null;
 		String sql = String.format(
 				"SELECT t2.*"
 			   +"\tFROM (SELECT ROWNUM seq,t.*"
@@ -53,13 +53,13 @@ public class BoardDAOImpl implements BoardDAO{
 	}
 
 	@Override
-	public int update(ArticleDTO param) throws Exception {
+	public int update(Article param) throws Exception {
 		String sql = "";
 		return 0;
 	}
 
 	@Override
-	public int delete(ArticleDTO param) throws Exception {
+	public int delete(Article param) throws Exception {
 		String sql = String.format("DELETE FROM Article WHERE art_seq='%s'", param.getSeq());
 	
 		return 0;

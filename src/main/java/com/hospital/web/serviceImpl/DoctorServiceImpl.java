@@ -3,26 +3,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
-import com.hospital.web.domain.DoctorDTO;
+import com.hospital.web.domain.Doctor;
 import com.hospital.web.service.DoctorService;
 
 @Service
 public class DoctorServiceImpl implements DoctorService{
 	@Autowired DoctorService service;
 	@Override
-	public int join(DoctorDTO bean) throws Exception {
+	public int join(Doctor bean) throws Exception {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public DoctorDTO findbyId(String id) throws Exception {
+	public Doctor findbyId(String id) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public DoctorDTO login(DoctorDTO bean) throws Exception {
+	public Doctor login(Doctor bean) throws Exception {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -34,13 +34,13 @@ public class DoctorServiceImpl implements DoctorService{
 	}
 
 	@Override
-	public int change(DoctorDTO bean) throws Exception {
+	public int change(Doctor bean) throws Exception {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override
-	public int remove(DoctorDTO bean) throws Exception {
+	public int remove(Doctor bean) throws Exception {
 		// TODO Auto-generated method stub
 		return 0;
 	}

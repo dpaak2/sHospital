@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hospital.web.mapper.PatientMapper">
-	<select id="selectById" resultType="com.hospital.web.domain.PatientDTO"
+	<select id="selectById" resultType="com.hospital.web.domain.Patient"
 		parameterType="String">
 		SELECT 
 		pat_id AS patID,

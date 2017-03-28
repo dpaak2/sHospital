@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.hospital.web.PatientController;
 import com.hospital.web.dao.PatientDAO;
-import com.hospital.web.domain.PatientDTO;
+import com.hospital.web.domain.Patient;
 import com.hospital.web.mapper.PatientMapper;
 import com.hospital.web.service.PatientService;
 
@@ -18,23 +18,23 @@ public class PatientServiceImpl implements PatientService {
 	@Autowired
 	PatientService service;
 	@Autowired
-	PatientDTO patient; /* spring root context에 값이 있다 */
+	Patient patient; /* spring root context에 값이 있다 */
 	@Autowired	PatientMapper mapper;
 
 	@Override
-	public int join(PatientDTO patient) throws Exception {
+	public int join(Patient patient) throws Exception {
 		logger.info("PatientServiceImpl -join() {}", "join");
 		return 0;
 	}
 
 	@Override
-	public PatientDTO findById(String id) throws Exception {
+	public Patient findById(String id) throws Exception {
 		logger.info("PatientServiceImpl -findById() {}", "findById");
 		return null;
 	}
 
 	@Override
-	public PatientDTO login(PatientDTO member) throws Exception {
+	public Patient login(Patient member) throws Exception {
 		logger.info("PatientServiceImpl -login() {}", "login");
 
 		return mapper.selectById(member.getPatID());
@@ -48,13 +48,13 @@ public class PatientServiceImpl implements PatientService {
 	}
 
 	@Override
-	public int change(PatientDTO patient) throws Exception {
+	public int change(Patient patient) throws Exception {
 		logger.info("PatientServiceImpl -goJoin() {}", "ENTER");
 		return 0;
 	}
 
 	@Override
-	public int remove(PatientDTO patient) throws Exception {
+	public int remove(Patient patient) throws Exception {
 		logger.info("PatientServiceImpl -goJoin() {}", "ENTER");
 		return 0;
 	}
@@ -83,7 +83,7 @@ public class PatientServiceImpl implements PatientService {
 	}
 
 	@Override
-	public PatientDTO getSession() {
+	public Patient getSession() {
 		logger.info("PatientServiceImpl -goJoin() {}", "ENTER");
 		return null;
 	}

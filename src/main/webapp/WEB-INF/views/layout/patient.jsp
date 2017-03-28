@@ -11,7 +11,7 @@
 <head>
 <meta charset="UTF-8" />
 <title><tiles:getAsString name="title"></tiles:getAsString></title>
-<link rel="stylsheet" type="text/css" href="${context.css}/hanbit.css"></link>
+<link rel="stylsheet" href="${context.css}/hanbit.css"></link>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="${context.js}/patient.js"></script>

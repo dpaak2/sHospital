@@ -1,10 +1,10 @@
 package com.hospital.web.dao;
 
-import com.hospital.web.domain.DoctorDTO;
+import com.hospital.web.domain.Doctor;
 
 public interface DoctorDAO {
-		public int insert(DoctorDTO bean) throws Exception;
-		public DoctorDTO selectById(String id) throws Exception;
-		public int update(DoctorDTO bean) throws Exception;
-		public int delete(DoctorDTO bean) throws Exception;
+		public int insert(Doctor bean) throws Exception;
+		public Doctor selectById(String id) throws Exception;
+		public int update(Doctor bean) throws Exception;
+		public int delete(Doctor bean) throws Exception;
 }

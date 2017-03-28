@@ -8,48 +8,48 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import com.hospital.web.dao.BoardDAO;
-import com.hospital.web.domain.ArticleDTO;
+import com.hospital.web.domain.Article;
 import com.hospital.web.service.BoardService;
 @Service
 public class BoardServiceImpl implements BoardService {
 	@Autowired BoardService sevice;
 	@Autowired BoardDAO dao;
 	@Override
-	public int add(ArticleDTO param) throws Exception{
+	public int add(Article param) throws Exception{
 		int rs = dao.insert(param);
 		return rs;
 	}
 
 	@Override
-	public ArticleDTO findOne(ArticleDTO param) throws Exception{
-		ArticleDTO article = dao.selectBySeq(param);
+	public Article findOne(Article param) throws Exception{
+		Article article = dao.selectBySeq(param);
 		return article;
 	}
 
 	@Override
-	public List<ArticleDTO> findSome(String[] param) throws Exception{
-		List<ArticleDTO> listSome = new ArrayList<>();
-		System.out.println("¼­ºñ½º¿¡ ³Ñ¾î°£ ÆÄ¶ó¹ÌÅÍ1:"+param[0]);
-		System.out.println("¼­ºñ½º¿¡ ³Ñ¾î°£ ÆÄ¶ó¹ÌÅÍ1:"+param[1]);
+	public List<Article> findSome(String[] param) throws Exception{
+		List<Article> listSome = new ArrayList<>();
+		System.out.println("ï¿½ï¿½ï¿½ñ½º¿ï¿½ ï¿½Ñ¾î°£ ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½1:"+param[0]);
+		System.out.println("ï¿½ï¿½ï¿½ñ½º¿ï¿½ ï¿½Ñ¾î°£ ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½1:"+param[1]);
 		listSome = dao.selectByWord(param);
-		System.out.println("¼­ºñ½º¿¡¼­ º» ¸®½ºÆ®°á°ú:"+listSome);
+		System.out.println("ï¿½ï¿½ï¿½ñ½º¿ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ï¿½:"+listSome);
 		return listSome;
 	}
 
 	@Override
-	public List<ArticleDTO> list(int[] pageArr){
-		List<ArticleDTO> listAll = dao.selectAll(pageArr);
+	public List<Article> list(int[] pageArr){
+		List<Article> listAll = dao.selectAll(pageArr);
 		return listAll;
 	}
 
 	@Override
-	public int update(ArticleDTO param) throws Exception{
+	public int update(Article param) throws Exception{
 		int rs = dao.update(param);
 		return rs;
 	}
 
 	@Override
-	public int delete(ArticleDTO param) throws Exception{
+	public int delete(Article param) throws Exception{
 		int rs = dao.delete(param);
 		return rs;
 	}

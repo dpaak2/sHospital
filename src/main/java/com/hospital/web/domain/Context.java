@@ -8,8 +8,11 @@ import lombok.Setter;
 
 @Component
 @Data
-public class ChartDTO {
+public class Context {
 	@Getter
 	@Setter
-	private String charID, treatID, docId, patID, nurID, chartContent;
+	private String path, js, css, img;
+
+
+
 }

@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import com.hospital.web.domain.PatientDTO;
+import com.hospital.web.domain.Patient;
 import com.hospital.web.mapper.PatientMapper;
+import com.hospital.web.service.CRUD;
 import com.hospital.web.service.ExistService;
 import com.hospital.web.service.PatientService;
 
@@ -22,7 +22,7 @@ public class PatientController {
 	@Autowired
 	PatientService service;/* 로딩하는순간 연결끝 -mvc가 던져주고 간다. */
 	@Autowired
-	PatientDTO patient;
+	Patient patient;
 	@Autowired
 	PatientMapper mapper;
 
@@ -54,7 +54,7 @@ public class PatientController {
 		patient.setPatPass(password);
 
 		/* int count=service.count(); 존재여부를 확인 serviceImpl */
-		ExistService ex = new ExistService() {
+		CRUD.ExistService ex = new CRUD.ExistService() {
 
 			@Override
 			public int exist(Object o) throws Exception {
